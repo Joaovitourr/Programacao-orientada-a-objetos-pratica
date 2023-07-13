@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+body{
+    background-color: #000000;
+}
+
+</style>
+
+<body>
+    
+
+
+    <script> 
+/*
+    const onibus = function(passageiros){
+        this.passageiros = passageiros;
+        this.vivos = 100;
+        this.morreram = 0;
+    }
+
+    const onibus1 = new onibus(100)//
+    
+    onibus.prototype.acidente = true;
+    
+    onibus.prototype.mortos = function(){
+        if(onibus.prototype.acidente == true){
+            console.log(
+                `Aconteceu um acidente com o onibus`)
+            this.vivos--;
+            this.morreram++;
+           
+        }  else {
+            console.log("Onibus seguindo viagem normalmente")
+            
+        }
+    }
+     
+    onibus1.mortos();
+    onibus1.mortos();
+    onibus1.mortos();
+    onibus1.mortos();
+
+console.log(onibus1)
+ 
+
+
+ const ProgramaDeTv = function(){
+      this.programakids1 = "Bob esponja";
+      this.programakids2 = "Peppa pig";
+      this.programakids3 = 'Coragem o cao covarde';
+      this.programakids4 = "Popeye";
+      this.programaAdulto1 = "O grito";
+      this.programaAdulto2 = "Atracao perigosa";
+      this.programaAdulto3 = "Os bad boys 1";
+      this.programaAdulto4 = "os bad boys 2";
+ }
+ const SBT = new ProgramaDeTv("Programacao");
+
+
+
+ ProgramaDeTv.prototype.idade = 17;
+ ProgramaDeTv.prototype.permitir = function(){
+    if(ProgramaDeTv.prototype.idade <= 17){
+        console.log(`voce tem ${this.idade} anos. Pode assistir : ${this.programakids1}, 
+        ${this.programakids2}, ${this.programakids3}, ${this.programakids4}, 
+        `)
+        
+    } else{
+        console.log(`voce tem ${this.idade} anos. voce pode assistir: ${this.programaAdulto1},${this.programaAdulto2},
+          ${this.programaAdulto3},  ${this.programaAdulto4} `)
+       
+    }
+ }
+
+ console.log(SBT)
+
+ SBT.permitir();
+
+
+ class Carro{
+    
+    constructor(nome, marca, ano, valor){
+         this.nome = nome;
+         this.marca = marca;
+         this.ano = ano;
+         this.valor = valor;
+        
+         this.andar();
+    } 
+
+    andar(){
+        console.log(`O carro ${this.nome} está andando.`);
+    }
+
+
+
+ }
+
+ const carro1 = new Carro("Uno", "Fiat", "2002", "R$ 30.000")
+
+ carro1.andar();
+ console.log(carro1)
+
+
+
+
+
+
+ class superCarros extends Carro{
+          constructor( nome,marca,ano,valor, unidades){
+            super(nome,marca,ano,valor, unidades);
+          }
+ }
+
+ const super1 = new superCarros("Lamborghini Veneno", "Lamborghini", "2023", "R$ 2,400.000.00", 20)
+ const super2 = new superCarros("Lamborghini Aventador", "Lamborghini", "2024", "R$ 3,620.000.00", 3)
+
+ 
+ console.log(super1)
+ console.log(super2)
+
+ class superRaros extends Carro{
+    constructor(nome,marca,ano,valor, unidades, fabricacao, km, assinatura){
+        super(nome,marca,ano,valor, unidades);
+         this.fabricacao = fabricacao;
+         this.km = km;
+         this.assinatura = assinatura;
+     
+
+    } 
+
+    assinado(){
+       console.log(`o carro ${this.nome} do ano ${this.ano} foi assinado por Michael jackson`)
+    }
+ }
+
+ const raros1 = new superRaros("Rolls royce", "BMW", "1998", "R$ 10,000,000.00", 1, 1997, 0, 'Michael jackson')
+
+ console.log(raros1)
+ raros1.assinado();
+ 
+ 
+ */
+
+ class Banco {
+  constructor(nome, sobrenome, saldo, contaParaEnvio) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+    this.saldo = 60;
+    this.contaReceber = "111-111-111-11";
+    this.contaParaEnvio = contaParaEnvio;
+  }
+
+  enviar() {
+    const valorEnvio = 10;
+
+    const d = new Date();
+    const mes = d.getMonth() + 1;
+    const dia = d.getDate();
+    const hora = d.getHours();
+    const minutos = d.getMinutes();
+    const segundos = d.getSeconds();
+
+    if (this.saldo >= valorEnvio) {
+      console.log(
+        `${this.nome} enviou ${valorEnvio} Reais para a conta ${this.contaParaEnvio} no mês ${mes}, no dia ${dia}, às ${hora} horas, ${minutos} minutos e ${segundos} segundos`
+      );
+
+      this.saldo -= valorEnvio;
+      const saldoAtualizado = this.saldo;
+      console.log("Seu saldo atual é de", saldoAtualizado + " Reais");
+
+      contaRecebe.saldo += valorEnvio;
+
+      console.log(
+        `${contaRecebe.nome} recebeu ${valorEnvio} Reais na conta ${contaRecebe.contaReceber} no mês ${mes}, no dia ${dia}, às ${hora} horas, ${minutos} minutos e ${segundos} segundos`
+      );
+      const saldoAtualizadoRecebe = contaRecebe.saldo;
+      console.log(
+        "Saldo atual da conta que recebe é de",
+        saldoAtualizadoRecebe + " Reais"
+      );
+    } else {
+      alert("Erro, você não tem saldo suficiente");
+    }
+  }
+
+  receber(valor) {
+    this.contaReceber = this.contaParaEnvio;
+    this.nome = "Lucia";
+
+    console.log(this.nome);
+  }
+
+  extrato() {
+    // Implementação do método extrato
+  }
+}
+
+const joao = new Banco("Joao", "Jv", "180", "111-111-111-11");
+const lucia = new Banco("Lucia", "Silva", "66", "333-3333-333-33");
+
+const contaRecebe = new Banco("Luciana", "Silva", 0, "222-222-222-22");
+
+joao.enviar();
+lucia.receber(40);
+
+
+
+
+    </script>
+</body>
+</html>
